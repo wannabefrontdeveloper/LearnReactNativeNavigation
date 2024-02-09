@@ -15,6 +15,17 @@ function App() {
           component={HomeScreen}
           options={{
             title: '홈',
+            // Header 블록에 대한 스타일
+            headerStyle: {
+              backgroundColor: '#29b6f6',
+            },
+            // Header의 텍스트, 버튼들 색상
+            headerTintColor: '#ffffff',
+            // 타이틀 텍스트의 스타일
+            headerTitleStyle: {
+              fontWeight: 'bold',
+              fontSize: 20,
+            },
           }}
         />
         <Stack.Screen
