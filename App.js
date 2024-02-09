@@ -3,6 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from './screens/HomeScreen';
 import DetailScreen from './screens/DetailScreen';
+import {View, Text, TouchableOpacity} from 'react-native';
 
 const Stack = createNativeStackNavigator();
 
@@ -31,9 +32,23 @@ function App() {
         <Stack.Screen
           name="Detail"
           component={DetailScreen}
-          options={({route}) => ({
-            title: `상세 정보 - ${route.params.id}`,
-          })}
+          options={{
+            headerLeft: ({onPress}) => (
+              <TouchableOpacity onPress={onPress}>
+                <Text>Left</Text>
+              </TouchableOpacity>
+            ),
+            headerTitle: ({children}) => (
+              <View>
+                <Text>{children}</Text>
+              </View>
+            ),
+            headerRight: () => (
+              <View>
+                <Text>Right</Text>
+              </View>
+            ),
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
