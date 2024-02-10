@@ -2,6 +2,7 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {View, Text, Button} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 const Drawer = createDrawerNavigator();
 
@@ -34,10 +35,15 @@ function App() {
         initialRouteName="Home"
         drawerePosition="left"
         backBehavior="history"
-        screenOptions={{
-          drawerActiveBackgroundColor: '#fb8c00',
-          drawerActiveTintColor: 'white',
-        }}>
+        drawerContent={({navigation}) => (
+          <SafeAreaView>
+            <Text>A Custom Drawer</Text>
+            <Button
+              onPress={() => navigation.closeDrawer()}
+              title="Drawer 닫기"
+            />
+          </SafeAreaView>
+        )}>
         <Drawer.Screen
           name="Home"
           component={HomeScreen}
