@@ -47,7 +47,7 @@ function App() {
         <Drawer.Screen
           name="Home"
           component={HomeScreen}
-          options={{title: '홈'}}
+          options={{title: '홈', headerLeft: () => <Text>Left</Text>}}
         />
         <Drawer.Screen
           name="Setting"
