@@ -1,63 +1,32 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createDrawerNavigator} from '@react-navigation/drawer';
-import {View, Text, Button} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {Text} from 'react-native';
 
-const Drawer = createDrawerNavigator();
+const Tab = createBottomTabNavigator();
 
 function HomeScreen({navigation}) {
-  return (
-    <View>
-      <Text>Home</Text>
-      <Button title="Drawer 열기" onPress={() => navigation.openDrawer()} />
-      <Button
-        title="Setting 열기"
-        onPress={() => navigation.navigate('Setting')}
-      />
-    </View>
-  );
+  return <Text>Home</Text>;
 }
-
-function SettingScreen({navigation}) {
-  return (
-    <View>
-      <Text>Setting</Text>
-      <Button title="뒤로가기" onPress={() => navigation.goBack()} />
-    </View>
-  );
+function SearchScreen({navigation}) {
+  return <Text>Search</Text>;
+}
+function NotificationScreen({navigation}) {
+  return <Text>Notification</Text>;
+}
+function MessageScreen({navigation}) {
+  return <Text>Message</Text>;
 }
 
 function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator
-        initialRouteName="Home"
-        drawerePosition="left"
-        backBehavior="history"
-        screenOptions={{
-          headerShown: false,
-        }}
-        drawerContent={({navigation}) => (
-          <SafeAreaView>
-            <Text>A Custom Drawer</Text>
-            <Button
-              onPress={() => navigation.closeDrawer()}
-              title="Drawer 닫기"
-            />
-          </SafeAreaView>
-        )}>
-        <Drawer.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{title: '홈', headerLeft: () => <Text>Left</Text>}}
-        />
-        <Drawer.Screen
-          name="Setting"
-          component={SettingScreen}
-          options={{title: '설정'}}
-        />
-      </Drawer.Navigator>
+      <Tab.Navigator initialRouteName="Home">
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Search" component={SearchScreen} />
+        <Tab.Screen name="Notification" component={NotificationScreen} />
+        <Tab.Screen name="Message" component={MessageScreen} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
