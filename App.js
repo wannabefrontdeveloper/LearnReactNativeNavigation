@@ -33,7 +33,11 @@ function App() {
       <Drawer.Navigator
         initialRouteName="Home"
         drawerePosition="left"
-        backBehavior="history">
+        backBehavior="history"
+        screenOptions={{
+          drawerActiveBackgroundColor: '#fb8c00',
+          drawerActiveTintColor: 'white',
+        }}>
         <Drawer.Screen
           name="Home"
           component={HomeScreen}
