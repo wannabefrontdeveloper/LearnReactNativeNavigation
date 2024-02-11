@@ -1,9 +1,9 @@
 import React from 'react';
-import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs';
+import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import {Text, View, Button, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-const Tab = createMaterialTopTabNavigator();
+const Tab = createMaterialBottomTabNavigator();
 
 function HomeScreen({navigation}) {
   return (
@@ -57,11 +57,8 @@ function MainScreen() {
   return (
     <Tab.Navigator
       initialRouteName="Home"
-      screenOptions={{
-        tabBarIndicatorStyle: {
-          backgroundColor: '#009688',
-        },
-        tabBarActiveTintColor: '#009688',
+      tabBarOptions={{
+        showIcon: true,
       }}>
       <Tab.Screen
         name="Home"
