@@ -67,6 +67,7 @@ function MainScreen() {
           tabBarLabel: '홈',
           tabBarIcon: ({color}) => <Icon name="home" color={color} size={24} />,
           tabBarColor: 'black',
+          tabBarBadge: 'new',
         }}
       />
       <Tab.Screen
@@ -89,6 +90,7 @@ function MainScreen() {
             <Icon name="notifications" color={color} size={24} />
           ),
           tabBarColor: 'green',
+          tabBarBadge: 30,
         }}
       />
       <Tab.Screen
@@ -100,6 +102,7 @@ function MainScreen() {
             <Icon name="message" color={color} size={24} />
           ),
           tabBarColor: 'blue',
+          tabBarBadge: true,
         }}
       />
     </Tab.Navigator>
