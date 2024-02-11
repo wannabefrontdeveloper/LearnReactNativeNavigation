@@ -10,9 +10,14 @@ import DetailScreen from './screens/DetailScreen';
 const Stack = createNativeStackNavigator();
 
 function getHeaderTitle(route) {
-  const routeName = getFocusedRouteNameFromRoute(route);
-  console.log(routeName);
-  return routeName;
+  const routeName = getFocusedRouteNameFromRoute(route) ?? 'Home';
+  const nameMap = {
+    Home: '홈',
+    Search: '검색',
+    Notification: '알림',
+    Message: '메시지',
+  };
+  return nameMap[routeName];
 }
 
 function App() {
