@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import {Text, View, Button, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -17,6 +17,12 @@ function OpenDetailButton() {
 }
 
 function HomeScreen() {
+  useEffect(() => {
+    console.log('mounted');
+    return () => {
+      console.log('unmounted');
+    };
+  }, []);
   return (
     <View>
       <Text>Home</Text>
