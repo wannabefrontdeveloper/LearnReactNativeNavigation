@@ -66,6 +66,7 @@ function MainScreen() {
         options={{
           tabBarLabel: '홈',
           tabBarIcon: ({color}) => <Icon name="home" color={color} size={24} />,
+          tabBarColor: 'black',
         }}
       />
       <Tab.Screen
@@ -76,6 +77,7 @@ function MainScreen() {
           tabBarIcon: ({color}) => (
             <Icon name="search" color={color} size={24} />
           ),
+          tabBarColor: 'gray',
         }}
       />
       <Tab.Screen
@@ -86,6 +88,7 @@ function MainScreen() {
           tabBarIcon: ({color}) => (
             <Icon name="notifications" color={color} size={24} />
           ),
+          tabBarColor: 'green',
         }}
       />
       <Tab.Screen
@@ -96,6 +99,7 @@ function MainScreen() {
           tabBarIcon: ({color}) => (
             <Icon name="message" color={color} size={24} />
           ),
+          tabBarColor: 'blue',
         }}
       />
     </Tab.Navigator>
